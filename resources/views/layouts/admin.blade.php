@@ -66,7 +66,14 @@
     <script src="{{ asset('admin/js/plugins/perfect-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/plugins/smooth-scrollbar.min.js') }}" defer></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
+    @if(session('status'))
+      <script>
+        swal("{{ session('status') }}","Thank You", "success",{button:"X"});
+      </script>
+    @endif 
+
     <script>
       var win = navigator.platform.indexOf('Win') > -1;
       if (win && document.querySelector('#sidenav-scrollbar')) {
