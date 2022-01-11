@@ -38,7 +38,7 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <!-- Shop overview calculation section -->
-      @include('layouts.admininc.shopcalc')
+      {{-- @include('layouts.admininc.shopcalc') --}}
       
       <!-- Custom content section -->
       @yield('content')
@@ -47,7 +47,7 @@
       {{-- @include('layouts.admininc.shopchart') --}}
       
       <!-- Projects section -->
-      @include('layouts.admininc.project')
+      {{-- @include('layouts.admininc.project') --}}
       
       <!-- Footer section -->
       @include('layouts.admininc.footer')

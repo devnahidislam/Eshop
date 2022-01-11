@@ -1960,7 +1960,7 @@ textarea.form-control-lg {
 .form-select {
   display: block;
   width: 100%;
-  padding: 0.5rem 1rem 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem .5rem;
   -moz-padding-start: -3px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1981,7 +1981,7 @@ textarea.form-control-lg {
     .form-select {
       transition: none; } }
   .form-select:focus {
-    border-color: transparent;
+    border-color: gray;
     outline: 0;
     box-shadow: none; }
   .form-select[multiple], .form-select[size]:not([size="1"]) {

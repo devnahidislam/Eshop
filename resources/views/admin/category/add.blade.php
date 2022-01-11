@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-  <div class="card-header">
+  <div class="card-header d-flex justify-content-center">
     <h3>Add Category</h3>
   </div>
   <div class="card-body">
@@ -62,16 +62,16 @@
           <label for="meta_keywords">Meta Keywords</label>
           <textarea name="meta_keywords" class="form-control" rows="3" placeholder="Meta Keyword"></textarea>
         </div>
-        <div class="col-md-12 mb-2">
-          <label for="image">Choose an Image</label>
-          <input type="file" name="image" class="form-control" required>
+        <div class="col-md-12 mb-1">
+          <label for="image">Choose Products Image</label><br>
+          <input type="file" name="image" multiple class="choose">
           @error('image')
             <div class="text-danger mt-2 text-sm">
               {{ $message }}
             </div>
           @enderror
         </div>
-        <div class="col-md-12 mt-5 d-flex justify-content-center">
+        <div class="col-md-12 d-flex justify-content-center">
           <button type="submit" class="px-6 btn btn-primary">Submit</button>
         </div>
       </div>

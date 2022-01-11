@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\categoryController;
 
 Route::get('/', function () {
@@ -25,4 +26,11 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('/update-category/{id}', 'Admin\categoryController@update');
     Route::get('/delete-category/{id}', 'Admin\categoryController@delete');
 
+    Route::get('/products', [productController::class, 'index']);
+    Route::get('/add-product', [productController::class, 'add']);
+    Route::post('/add-product', [productController::class, 'insert']);
+
+    Route::get('/edit-product/{id}', [productController::class, 'edit']);
+    Route::put('/update-product/{id}', [productController::class, 'update']);
+    Route::get('/delete-product/{id}', [productController::class, 'delete']);
 });

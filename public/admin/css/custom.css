@@ -1,0 +1,31 @@
+table{
+  width: 100%;
+}
+table td, th{
+  padding:2px 2px;
+  border:1px solid #ddd;
+}
+
+
+.form-select option{
+  padding:5px !important;
+}
+/* input file */
+
+.choose::file-selector-button {
+  color: white;
+  display: inline-block;
+  background: #089fc8;
+  border: none;
+  padding: 7px 15px;
+  font-weight: 700;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 10pt;
+}
+
+.back-btn{
+  font-size:2rem;
+  font-weight: bolder;
+}
