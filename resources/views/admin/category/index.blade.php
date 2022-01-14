@@ -2,9 +2,12 @@
 
 @section('content')
 <div class="card">
-  <div class="card-head">
-    <h1 class="d-flex justify-content-center">Category page</h1>
-    <a href="{{ url('add-category') }}" class="btn btn-info btn-sm ml-auto mx-4">Add Category</a>
+  <div class="col-md-12 my-5 d-flex justify-content-between align-items-center">
+    <div>
+      <a class="back-btn" href="{{ url('/dashboard') }}">↢ Back</a>
+    </div>
+    <h1>Category Page</h1>
+    <div></div>
   </div>
   <div class="card-body">
     <table class="table-content">

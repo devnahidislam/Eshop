@@ -3,8 +3,14 @@
 @section('content')
 
 <div class="card">
+  <div class="col-md-12 my-5 d-flex justify-content-between align-items-center">
+    <div>
+      <a class="back-btn" href="{{ url('/dashboard') }}">↢ Back</a>
+    </div>
+    <h1>Product Page</h1>
+    <div></div>
+  </div>
   <div class="card-head">
-    <h1 class="d-flex justify-content-center">Category page</h1>
     <a href="{{ url('add-product') }}" class="btn btn-info btn-sm ml-auto mx-4">Add Products</a>
   </div>
 

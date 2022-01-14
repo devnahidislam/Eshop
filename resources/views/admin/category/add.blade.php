@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="card">
-  <div class="card-header d-flex justify-content-center">
-    <h3>Add Category</h3>
+  <div class="col-md-12 my-5 d-flex justify-content-between align-items-center">
+    <div>
+      <a class="back-btn" href="{{ url('categories') }}">↢ Back</a>
+    </div>
+    <h1>Add Category</h1>
+    <div></div>
   </div>
   <div class="card-body">
     <form action="{{ url('add-category') }}" method="post" enctype="multipart/form-data">

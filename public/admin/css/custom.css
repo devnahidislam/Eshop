@@ -26,6 +26,18 @@ table td, th{
 }
 
 .back-btn{
-  font-size:2rem;
-  font-weight: bolder;
+  background: rgb(73, 73, 73);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 9px 5px 5px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius:8px;
+  margin-left: .5rem;
+}
+.back-btn:hover{
+  color: white;
+  background:rgb(3, 142, 70);
 }

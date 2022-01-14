@@ -2,9 +2,12 @@
 
 @section('content')
 <div class="card">
-  <a href="{{ url('products') }}" class="back-btn mx-2">↢</a>
-  <div class="card-header d-flex justify-content-center">
-    <h3>Add Product</h3>
+  <div class="col-md-12 my-5 d-flex justify-content-between align-items-center">
+    <div>
+      <a class="back-btn" href="{{ url('products') }}">↢ Back</a>
+    </div>
+    <h1>Add Product</h1>
+    <div></div>
   </div>
   <div class="card-body">
     <form action="{{ url('add-product') }}" method="post" enctype="multipart/form-data">

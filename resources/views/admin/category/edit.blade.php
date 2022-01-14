@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="card">
-  <div class="card-header">
-    <h3 class="d-flex justify-content-center">Edit & Update Category</h3>
+  <div class="col-md-12 my-5 d-flex justify-content-between align-items-center">
+    <div>
+      <a class="back-btn" href="{{ url('categories') }}">↢ Back</a>
+    </div>
+    <h1>Edit & Update Category</h1>
+    <div></div>
   </div>
   <div class="card-body">
     <form action="{{ url('update-category/'.$category->id) }}" method="post" enctype="multipart/form-data">

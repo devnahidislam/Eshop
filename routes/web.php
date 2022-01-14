@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Admin\categoryController;
+use App\Http\Controllers\frontend\frontendController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [frontendController::class, 'frontIndex']);
+Route::get('/category', [frontendController::class, 'category']);
+Route::get('/view-category/{slug}', [frontendController::class, 'viewCategory']);
 
 Auth::routes();
 
