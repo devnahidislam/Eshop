@@ -24,7 +24,20 @@ class frontendController extends Controller
             $products = Product::where('category_id',$category->id)->where('status','0')->get();
             return view('frontend.product.index',compact('category','products'));
         }else{
-            return redirect('/')->with('status','Slug not matshed');
+            return redirect('/')->with('status','Slug does not matched');
+        }
+    }
+
+    public function productView($c_slug, $p_slug){
+        if(Category::where('slug',$c_slug)->exists()){
+            if(Product::where('slug',$p_slug)->exists()){
+                $product = Product::where('slug', $p_slug)->first();
+                return view('frontend.product.singleproduct', compact('product'));
+            }else{
+                return redirect('/')->with('status','Product doesn\'t exist');
+            }
+        }else{
+            return redirect('/')->with('status','Category Slug does not matched');
         }
     }
 }
