@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="card shadow">
+        <div class="card shadow product_data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
@@ -36,7 +36,7 @@
                         <hr>
                         @if($product->quantity > 0)
                         <div class="d-flex">
-                            <h6 class="d-flex justify-content-center align-items-center p-1 bg-success text-white">In Stock</h6>
+                            <h6 class="d-flex justify-content-center align-items-center p-1 bg-success text-white">In Stock({{ $product->quantity }})</h6>
                         </div>
                         @else
                         <div class="d-flex">
@@ -45,16 +45,19 @@
                         @endif
                         <div class="row">
                             <div class="col-md-3">
+                                <input type="hidden" value="{{ $product->id }}" class="product_id">
                                 <label for="quantity">Quantity</label>
                                 <div class="input-grpup d-flex">
                                     <button class="input-group-text decrement-btn">-</button>
-                                    <input type="text" name="quantity" value="1" class="form-control quantity-input"/>
+                                    <input type="text" name="quantity" value="1" disabled class="form-control w-50 quantity-input"/>
                                     <button class="input-group-text increment-btn">+</button>
                                 </div>
                             </div>
                             <div class="col-md-9 mt-4">
-                                <button type="submit" class="btn btn-success mx-2"> <i class="far fa-heart"></i> </button>
-                                <button type="submit" class="btn btn-primary"> <i class="fas fa-cart-arrow-down"></i> </button>
+                                @if($product->quantity > 0)
+                                <button type="submit" class="btn btn-primary mx-2 addToCartBtn"> <i class="fas fa-cart-arrow-down"></i> </button>
+                                @endif
+                                <button type="submit" class="btn btn-success"> <i class="far fa-heart"></i> </button>
                             </div>
                         </div>
                     </div>
@@ -68,33 +71,4 @@
         </div>
     </div>
 
-@endsection
-
-@section('script')
-<script>
-    $(document).ready(function () {
-        $('.increment-btn').click(function (e) { 
-            e.preventDefault();
-            var value = $('.quantity-input').val();
-            var incrementValue = parseInt(value, 10);
-            incrementValue = isNaN(incrementValue) ? 0 : incrementValue;
-            if(incrementValue < 10){
-                incrementValue++;
-                $('.quantity-input').val(incrementValue);
-            }
-        });
-
-        $('.decrement-btn').click(function (e) { 
-            e.preventDefault();
-            var value = $('.quantity-input').val();
-            var decrementValue = parseInt(value, 10);
-            decrementValue = isNaN(decrementValue) ? 0 : decrementValue;
-            if(decrementValue > 1){
-                decrementValue--;
-                $('.quantity-input').val(decrementValue);
-            }
-        });
-
-    });
-</script>
 @endsection
