@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\productController;
 use App\Http\Controllers\Frontend\cartController;
+use App\Http\Controllers\Frontend\userController;
 use App\Http\Controllers\Admin\categoryController;
 use App\Http\Controllers\Frontend\checkoutController;
 use App\Http\Controllers\frontend\frontendController;
@@ -27,6 +28,9 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/update-cart', [cartController::class, 'updateCart']);
     Route::get('/checkout', [checkoutController::class, 'index']);
     Route::post('/place-order', [checkoutController::class, 'placeOrder']);
+
+    Route::get('/my-order', [userController::class, 'index']);
+    Route::get('/view-order/{id}', [userController::class, 'view']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

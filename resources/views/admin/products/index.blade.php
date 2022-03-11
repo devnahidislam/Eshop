@@ -25,7 +25,7 @@
           <th>Price</th>
           <th>Description</th>
           <th>Edit</th>
-          <th>Delet</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
